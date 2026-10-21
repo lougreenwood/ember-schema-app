@@ -1,3 +1,19 @@
-export const schemaPackageIdentity = {
-  name: '@ember-schema/schema',
-} as const;
+export type {
+  DisplayableFieldNames,
+  FieldDisplayOverride,
+  LegacyModelKeys,
+  ResolvedAttributeFieldDisplayInfo,
+  ResolvedBelongsToFieldDisplayInfo,
+  ResolvedDerivedFieldDisplayInfo,
+  ResolvedDisplayInfo,
+  ResolvedFieldDisplayInfo,
+  ResolvedGenericFieldDisplayInfo,
+  ResolvedHasManyFieldDisplayInfo,
+  ResolvedObjectFieldDisplayInfo,
+  ResolvedRecordDisplayInfo,
+  ResolvedSchemaObjectFieldDisplayInfo,
+  ResolvedSchemaTaxonomyGroup,
+  ResolvedSchemaTaxonomyItem,
+  SchemaRegistryEntry,
+  SchemaTaxonomyGroupDefinition,
+} from './types.js';
