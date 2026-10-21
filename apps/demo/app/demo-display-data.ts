@@ -1,4 +1,4 @@
-import type { DisplayInfo } from '@ember-schema/ember-schema/services/schema-display-info/base';
+import type { DisplayInfo } from '@ember-schema-app/ember-schema/services/schema-display-info/base';
 
 export const POST_DISPLAY_INFO = {
   fields: {

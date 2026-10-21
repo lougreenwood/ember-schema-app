@@ -1,5 +1,5 @@
 {
-  "name": "@ember-schema/ember-schema",
+  "name": "@ember-schema-app/ember-schema",
   "version": "0.1.0",
   "private": true,
   "description": "Schema-aware Ember components and service contracts.",
@@ -30,8 +30,8 @@
     "typecheck": "ember-tsc --noEmit"
   },
   "dependencies": {
-    "@ember-schema/schema": "workspace:*",
-    "@ember-schema/ember-ui": "workspace:*",
+    "@ember-schema-app/schema": "workspace:*",
+    "@ember-schema-app/ember-ui": "workspace:*",
     "@embroider/addon-shim": "^1.10.3",
     "decorator-transforms": "^2.3.1"
   },

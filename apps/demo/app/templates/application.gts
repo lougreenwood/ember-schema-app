@@ -1,5 +1,5 @@
-import SchemaProbe from '@ember-schema/ember-schema/components/schema-probe';
-import SurfacePanel from '@ember-schema/ember-ui/components/surface-panel';
+import SchemaProbe from '@ember-schema-app/ember-schema/components/schema-probe';
+import SurfacePanel from '@ember-schema-app/ember-ui/components/surface-panel';
 
 import DemoSummary from 'demo/components/demo-summary';
 

@@ -4,8 +4,8 @@
 
 ## Ownership
 
-- `@ember-schema/ember-ui` owns the base primitive classes and any component-local CSS it ships under `dist/`.
-- `@ember-schema/ember-schema` owns schema-composition classes and any CSS it ships under `dist/`.
+- `@ember-schema-app/ember-ui` owns the base primitive classes and any component-local CSS it ships under `dist/`.
+- `@ember-schema-app/ember-schema` owns schema-composition classes and any CSS it ships under `dist/`.
 - The demo owns its application stylesheet and must not import an application-specific theme from another repository.
 - Frontile remains a consumer-visible dependency. The packages must not hide a private copy of its theme.
 
@@ -16,8 +16,8 @@ A consumer stylesheet scans the package output and the Frontile sources:
 ```css
 @source "node_modules/frontile";
 @source "node_modules/@frontile/theme";
-@source "node_modules/@ember-schema/ember-ui/dist";
-@source "node_modules/@ember-schema/ember-schema/dist";
+@source "node_modules/@ember-schema-app/ember-ui/dist";
+@source "node_modules/@ember-schema-app/ember-schema/dist";
 ```
 
 The exact Frontile package paths must be rechecked against the pinned release when the primitives are copied. A packaged consumer is responsible for installing the Frontile and Ember Schema packages; workspace-only resolution is not part of the contract.

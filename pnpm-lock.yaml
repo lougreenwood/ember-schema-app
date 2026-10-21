@@ -173,13 +173,13 @@ importers:
 
   apps/demo:
     dependencies:
-      '@ember-schema/ember-schema':
+      '@ember-schema-app/ember-schema':
         specifier: workspace:*
         version: link:../../packages/ember-schema
-      '@ember-schema/ember-ui':
+      '@ember-schema-app/ember-ui':
         specifier: workspace:*
         version: link:../../packages/ember-ui
-      '@ember-schema/schema':
+      '@ember-schema-app/schema':
         specifier: workspace:*
         version: link:../../packages/schema
       true-myth:
@@ -222,10 +222,10 @@ importers:
 
   packages/ember-schema:
     dependencies:
-      '@ember-schema/ember-ui':
+      '@ember-schema-app/ember-ui':
         specifier: workspace:*
         version: link:../ember-ui
-      '@ember-schema/schema':
+      '@ember-schema-app/schema':
         specifier: workspace:*
         version: link:../schema
       '@embroider/addon-shim':
