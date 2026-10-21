@@ -53,6 +53,10 @@ run = "scripts/run-in-container.sh"
 description = "Start the repository container"
 run = "scripts/compose.sh up -d dev"
 
+[tasks."container:build"]
+description = "Build the repository container"
+run = "scripts/compose.sh build dev"
+
 [tasks."container:down"]
 description = "Stop the repository container"
 run = "scripts/compose.sh down"

@@ -21,7 +21,7 @@ jobs:
         uses: ./.github/actions/install-tooling
 
       - name: Build the development container
-        run: docker compose build dev
+        run: mise run container:build
 
       - name: Install dependencies
         run: mise run install:ci
