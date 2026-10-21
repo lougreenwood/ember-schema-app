@@ -1,46 +1,59 @@
 # Ember Schema App
 
-Schema-driven Ember UI packages and a synthetic demo application.
+Ember Schema App is a schema-driven UI toolkit for Ember applications. It lets you describe resources, fields, forms, tables, and navigation as schema data, then render consistent UI from those descriptions instead of hand-building every screen.
 
-## Status
+The project is useful when an application has many resource types that share the same patterns. Instead of repeating labels, field layouts, tables, filters, and forms for each resource, one schema registration can drive all of those surfaces. Apps can adopt the complete schema-aware layer or use the schema-free UI primitives on their own.
 
-Foundation verified. The package relationships, build pipeline, container, and service override pass their checks before the schema surface is copied. Nothing is published; the style runtime and date/number translation setup are later-phase work.
+## What it provides
+
+- **Schema contracts** — resource metadata, display metadata, field shapes, and taxonomy types that can be shared without depending on Ember.
+- **Schema-free primitives** — presentation, interaction, and accessibility building blocks that know nothing about resources or application models.
+- **Schema-aware components** — field display, forms, tables, and navigation that compose the primitives from schema metadata.
+- **Consumer-owned registries** — applications supply their own schemas, labels, renderers, tables, and actions instead of inheriting another application’s domain.
 
 ## Packages
 
-| Workspace                                              | Purpose                                              |
-| ------------------------------------------------------ | ---------------------------------------------------- |
-| `packages/schema` (`@ember-schema/schema`)             | Framework-neutral schema contracts.                  |
-| `packages/ember-ui` (`@ember-schema/ember-ui`)         | Schema-free Ember presentation primitives.           |
-| `packages/ember-schema` (`@ember-schema/ember-schema`) | Schema-aware components and service contracts.       |
-| `apps/demo`                                            | Synthetic Ember consumer used for integration tests. |
+| Package                      | Directory               | Responsibility                                              |
+| ---------------------------- | ----------------------- | ----------------------------------------------------------- |
+| `@ember-schema/schema`       | `packages/schema`       | Schema contracts and resource metadata types.               |
+| `@ember-schema/ember-ui`     | `packages/ember-ui`     | Schema-free Ember presentation primitives.                  |
+| `@ember-schema/ember-schema` | `packages/ember-schema` | Schema-aware field, form, table, and navigation components. |
 
-The dependency direction is `apps/demo → @ember-schema/ember-schema → @ember-schema/schema`, `apps/demo → @ember-schema/ember-schema → @ember-schema/ember-ui`, and `apps/demo → @ember-schema/ember-ui`. `@ember-schema/ember-ui` does not depend on either other package.
+`@ember-schema/ember-ui` is independently consumable and does not depend on the schema packages. `@ember-schema/ember-schema` composes the schema contracts with the base UI.
 
-See [package responsibilities](docs/packages.md) for the ownership boundary and [the style contract](docs/style-contract.md) for the current draft of consumer styling requirements. The style contract is not yet implemented.
+`apps/demo` is a sample Ember application that shows the packages working together. It is not a published package and is not part of the library API.
 
 ## Development
 
-The repository owns its toolchain through `mise` and its container definition in `compose.yaml` and `.devcontainer/`.
+The repository owns its toolchain through `mise`. Node, pnpm, and the development container are pinned by the repository.
 
 ```sh
-mise run container:up
 mise run install
-mise run build
-mise run test
-```
-
-The common checks run inside the repository container:
-
-```sh
 mise run build
 mise run typecheck
 mise run lint
 mise run format:check
+mise run test
 ```
 
-Start the demo with `mise run dev` after the repository has been installed.
+Run the sample application at `http://localhost:4200`:
+
+```sh
+mise run dev
+```
+
+All dependency and build commands run inside the repository container. Do not install dependencies on the host or create host `node_modules`.
+
+## Documentation
+
+- [Package responsibilities](docs/packages.md)
+- [Style contract](docs/style-contract.md)
+- [Documentation rules](docs/README.md)
+
+## Status
+
+The repository is under active development. The packages are private and have not been published.
 
 ## License
 
-MIT. See `LICENSE`.
+MIT. See [LICENSE](LICENSE).
