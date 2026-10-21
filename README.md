@@ -17,6 +17,8 @@ Foundation only. The package relationships, build pipeline, container, and one s
 
 The dependency direction is `apps/demo → @ember-schema/ember → @ember-schema/schema` and `apps/demo → @ember-schema/ui`. `@ember-schema/ui` does not depend on either other package.
 
+See [package responsibilities](docs/packages.md) for the ownership boundary and [the style contract](docs/style-contract.md) for the current draft of consumer styling requirements. The style contract is not yet implemented.
+
 ## Development
 
 The repository owns its toolchain through `mise` and its container definition in `compose.yaml` and `.devcontainer/`.
