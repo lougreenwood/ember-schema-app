@@ -7,7 +7,7 @@
 - `@ember-schema-app/ember-ui` owns the base primitive classes and any component-local CSS it ships under `dist/`.
 - `@ember-schema-app/ember-schema` owns schema-composition classes and any CSS it ships under `dist/`.
 - The demo owns its application stylesheet and must not import an application-specific theme from another repository.
-- Frontile remains a consumer-visible dependency. The packages must not hide a private copy of its theme.
+- Frontile is the planned consumer-visible dependency for the primitives phase. No Frontile dependency is installed yet; this contract is not evidence that the integration works.
 
 ## Consumer stylesheet sources
 

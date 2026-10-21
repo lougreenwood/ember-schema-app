@@ -67,7 +67,8 @@ apps/demo
 ├── @ember-schema-app/ember-schema
 │   ├── @ember-schema-app/schema
 │   └── @ember-schema-app/ember-ui
-└── @ember-schema-app/ember-ui
+├── @ember-schema-app/ember-ui
+└── @ember-schema-app/schema
 ```
 
 `apps/demo` is a sample Ember application used to exercise all three packages together. It is not part of the published library.

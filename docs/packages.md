@@ -4,7 +4,7 @@ The workspace is one repository with three packages and a synthetic demo. The pa
 
 ## `@ember-schema-app/schema`
 
-The schema package. It is the future home for the resource-schema contracts copied from the application. It does not own field display, form, table, navigation, interaction-surface, or renderer-registry contracts; those belong to `@ember-schema-app/ember-schema`. It does not import Ember, Glimmer, a store, a router, or concrete application models.
+The schema package. It owns resource-schema contracts and display metadata types. It does not own field display, form, table, navigation, interaction-surface, or renderer-registry contracts; those belong to `@ember-schema-app/ember-schema`. It does not import Ember, Glimmer, a store, a router, or concrete application models.
 
 ## `@ember-schema-app/ember-ui`
 
