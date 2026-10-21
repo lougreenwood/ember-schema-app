@@ -1,0 +1,13 @@
+{
+  "extends": "@ember/library-tsconfig",
+  "include": ["./src/index.ts", "./src/**/*.gts", "./unpublished-development-types/**/*"],
+  "compilerOptions": {
+    "allowJs": true,
+    "declarationDir": "declarations",
+    "emitDeclarationOnly": true,
+    "noEmitOnError": true,
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "rootDir": "./src",
+    "types": ["ember-source/types", "@glint/ember-tsc/types"]
+  }
+}

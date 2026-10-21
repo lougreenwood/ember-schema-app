@@ -1,0 +1,6 @@
+node_modules
+.pnpm-store
+dist
+declarations
+dist-tests
+pnpm-lock.yaml

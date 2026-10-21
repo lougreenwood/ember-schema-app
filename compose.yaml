@@ -1,0 +1,25 @@
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    working_dir: /workspace
+    init: true
+    ports:
+      - '4200:4200'
+    volumes:
+      - .:/workspace
+      - ember_schema_app_node_modules:/workspace/node_modules
+      - ember_schema_app_schema_node_modules:/workspace/packages/schema/node_modules
+      - ember_schema_app_ui_node_modules:/workspace/packages/ui/node_modules
+      - ember_schema_app_ember_node_modules:/workspace/packages/ember/node_modules
+      - ember_schema_app_demo_node_modules:/workspace/apps/demo/node_modules
+      - ember_schema_app_pnpm_store:/pnpm-store
+    command: ['sleep', 'infinity']
+volumes:
+  ember_schema_app_node_modules:
+  ember_schema_app_schema_node_modules:
+  ember_schema_app_ui_node_modules:
+  ember_schema_app_ember_node_modules:
+  ember_schema_app_demo_node_modules:
+  ember_schema_app_pnpm_store:

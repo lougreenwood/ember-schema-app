@@ -1,0 +1,16 @@
+# Pre-commit checks.
+#
+# Install the hook once per clone with `lefthook install`. The task surface
+# installs it automatically when dependencies are installed through the
+# package manager; otherwise run `mise exec -- lefthook install`.
+#
+# Formatting runs inside the repository container, so the hook never needs
+# host toolchains or host dependencies.
+
+pre-commit:
+  parallel: true
+  commands:
+    format:
+      glob: '*.{ts,tsx,js,mjs,cjs,json,md,yml,yaml,css,html}'
+      run: scripts/run-in-container.sh pnpm exec prettier --write {staged_files}
+      stage_fixed: true

@@ -1,0 +1,43 @@
+{
+  "name": "demo",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Synthetic consumer application for the Ember Schema App packages.",
+  "license": "MIT",
+  "exports": {
+    "./tests/*": "./tests/*",
+    "./*": "./app/*"
+  },
+  "scripts": {
+    "build": "vite build",
+    "lint": "eslint .",
+    "start": "vite",
+    "test": "vite build --mode development && ember test --path dist",
+    "typecheck": "ember-tsc --noEmit"
+  },
+  "dependencies": {
+    "true-myth": "9.4.0",
+    "@ember-schema/ember": "workspace:*",
+    "@ember-schema/schema": "workspace:*",
+    "@ember-schema/ui": "workspace:*"
+  },
+  "devDependencies": {
+    "@ember/test-helpers": "^5.2.2",
+    "@glimmer/component": "^2.0.0",
+    "@babel/runtime": "^7.28.6",
+    "decorator-transforms": "^2.3.1",
+    "ember-cli": "~6.11.0",
+    "ember-qunit": "^9.0.4",
+    "ember-resolver": "^13.1.1",
+    "ember-source": "~6.11.0",
+    "qunit": "^2.25.0",
+    "qunit-dom": "^3.5.0",
+    "vite": "^7.3.1"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "ember": {
+    "edition": "octane"
+  }
+}

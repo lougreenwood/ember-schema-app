@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install tooling
+        uses: ./.github/actions/install-tooling
+
+      - name: Build the development container
+        run: docker compose build dev
+
+      - name: Install dependencies
+        run: mise run install:ci
+
+      - name: Build
+        run: mise run build
+
+      - name: Lint
+        run: mise run lint
+
+      - name: Typecheck
+        run: mise run typecheck
+
+      - name: Test
+        run: mise run test
+
+      - name: Format check
+        run: mise run format:check

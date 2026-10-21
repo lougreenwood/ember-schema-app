@@ -1,0 +1,14 @@
+node_modules/
+.pnpm-store/
+dist/
+declarations/
+dist-tests/
+target/
+tmp/
+
+*.tgz
+.eslintcache
+.prettiercache
+.env
+.env.local
+.DS_Store

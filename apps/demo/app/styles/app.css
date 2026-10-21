@@ -1,0 +1,10 @@
+/* The demo deliberately uses a small stylesheet so the app build can prove CSS emission. */
+body {
+  font-family: system-ui, sans-serif;
+  margin: 2rem;
+}
+
+.schema-surface-panel {
+  border: 1px solid currentColor;
+  padding: 1rem;
+}
