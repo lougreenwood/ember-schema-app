@@ -17,9 +17,9 @@
   },
   "dependencies": {
     "true-myth": "9.4.0",
-    "@ember-schema/ember": "workspace:*",
+    "@ember-schema/ember-schema": "workspace:*",
     "@ember-schema/schema": "workspace:*",
-    "@ember-schema/ui": "workspace:*"
+    "@ember-schema/ember-ui": "workspace:*"
   },
   "devDependencies": {
     "@ember/test-helpers": "^5.2.2",

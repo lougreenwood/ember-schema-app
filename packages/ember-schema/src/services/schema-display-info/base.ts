@@ -1,5 +1,16 @@
-import type { DisplayInfo } from '@ember-schema/schema';
 import Service from '@ember/service';
+
+export interface ResolvedFieldDisplayInfo {
+  readonly kind: string;
+  readonly label: string;
+  readonly type?: string;
+}
+
+export interface DisplayInfo {
+  readonly fields: Readonly<Record<string, ResolvedFieldDisplayInfo>>;
+  readonly pluralLabel: string;
+  readonly resourceLabel: string;
+}
 
 export abstract class AbstractSchemaDisplayInfoService extends Service {
   protected abstract readonly displayInfo: Readonly<Record<string, DisplayInfo>>;

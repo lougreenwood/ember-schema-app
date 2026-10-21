@@ -11,15 +11,15 @@ services:
       - .:/workspace
       - ember_schema_app_node_modules:/workspace/node_modules
       - ember_schema_app_schema_node_modules:/workspace/packages/schema/node_modules
-      - ember_schema_app_ui_node_modules:/workspace/packages/ui/node_modules
-      - ember_schema_app_ember_node_modules:/workspace/packages/ember/node_modules
+      - ember_schema_app_ember_ui_node_modules:/workspace/packages/ember-ui/node_modules
+      - ember_schema_app_ember_schema_node_modules:/workspace/packages/ember-schema/node_modules
       - ember_schema_app_demo_node_modules:/workspace/apps/demo/node_modules
       - ember_schema_app_pnpm_store:/pnpm-store
     command: ['sleep', 'infinity']
 volumes:
   ember_schema_app_node_modules:
   ember_schema_app_schema_node_modules:
-  ember_schema_app_ui_node_modules:
-  ember_schema_app_ember_node_modules:
+  ember_schema_app_ember_ui_node_modules:
+  ember_schema_app_ember_schema_node_modules:
   ember_schema_app_demo_node_modules:
   ember_schema_app_pnpm_store:

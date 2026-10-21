@@ -6,12 +6,12 @@
     "node": ">=24"
   },
   "scripts": {
-    "build": "pnpm --filter @ember-schema/schema build && pnpm --filter @ember-schema/ui build && pnpm --filter @ember-schema/ember build && pnpm --filter demo build",
+    "build": "pnpm --filter @ember-schema/schema build && pnpm --filter @ember-schema/ember-ui build && pnpm --filter @ember-schema/ember-schema build && pnpm --filter demo build",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
     "lint": "eslint .",
-    "test": "pnpm --filter @ember-schema/schema test && pnpm --filter demo test",
-    "typecheck": "pnpm --filter @ember-schema/schema typecheck && pnpm --filter @ember-schema/ui typecheck && pnpm --filter @ember-schema/ember typecheck && pnpm --filter demo typecheck"
+    "test": "pnpm --filter demo test",
+    "typecheck": "pnpm --filter @ember-schema/schema typecheck && pnpm --filter @ember-schema/ember-ui typecheck && pnpm --filter @ember-schema/ember-schema typecheck && pnpm --filter demo typecheck"
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",

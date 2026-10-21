@@ -173,15 +173,15 @@ importers:
 
   apps/demo:
     dependencies:
-      '@ember-schema/ember':
+      '@ember-schema/ember-schema':
         specifier: workspace:*
-        version: link:../../packages/ember
+        version: link:../../packages/ember-schema
+      '@ember-schema/ember-ui':
+        specifier: workspace:*
+        version: link:../../packages/ember-ui
       '@ember-schema/schema':
         specifier: workspace:*
         version: link:../../packages/schema
-      '@ember-schema/ui':
-        specifier: workspace:*
-        version: link:../../packages/ui
       true-myth:
         specifier: 9.4.0
         version: 9.4.0
@@ -220,14 +220,14 @@ importers:
         specifier: ^7.3.1
         version: 7.3.7(@types/node@26.6.5)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1)
 
-  packages/ember:
+  packages/ember-schema:
     dependencies:
+      '@ember-schema/ember-ui':
+        specifier: workspace:*
+        version: link:../ember-ui
       '@ember-schema/schema':
         specifier: workspace:*
         version: link:../schema
-      '@ember-schema/ui':
-        specifier: workspace:*
-        version: link:../ui
       '@embroider/addon-shim':
         specifier: ^1.10.3
         version: 1.10.3
@@ -244,13 +244,7 @@ importers:
         specifier: ^9.4.0
         version: 9.4.0
 
-  packages/schema:
-    dependencies:
-      true-myth:
-        specifier: ^9.4.0
-        version: 9.4.0
-
-  packages/ui:
+  packages/ember-ui:
     dependencies:
       '@embroider/addon-shim':
         specifier: ^1.10.3
@@ -264,6 +258,8 @@ importers:
       ember-source:
         specifier: '>=6.7.0'
         version: 6.11.1(@glimmer/component@2.2.0)(rsvp@4.8.5)
+
+  packages/schema: {}
 
 packages:
 

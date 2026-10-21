@@ -1,5 +1,5 @@
-import DefaultSchemaDisplayInfoService from '@ember-schema/ember/services/schema-display-info';
-import SchemaProbe from '@ember-schema/ember/components/schema-probe';
+import DefaultSchemaDisplayInfoService from '@ember-schema/ember-schema/services/schema-display-info';
+import SchemaProbe from '@ember-schema/ember-schema/components/schema-probe';
 import { render } from '@ember/test-helpers';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';

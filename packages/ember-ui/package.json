@@ -1,8 +1,8 @@
 {
-  "name": "@ember-schema/ember",
+  "name": "@ember-schema/ember-ui",
   "version": "0.1.0",
   "private": true,
-  "description": "Schema-aware Ember components and service contracts.",
+  "description": "Schema-free Ember presentation primitives.",
   "license": "MIT",
   "exports": {
     ".": {
@@ -30,21 +30,16 @@
     "typecheck": "ember-tsc --noEmit"
   },
   "dependencies": {
-    "@ember-schema/schema": "workspace:*",
-    "@ember-schema/ui": "workspace:*",
     "@embroider/addon-shim": "^1.10.3",
     "decorator-transforms": "^2.3.1"
   },
   "peerDependencies": {
     "@glimmer/component": "^2.0.0",
-    "ember-source": ">=6.7.0",
-    "true-myth": "^9.4.0"
+    "ember-source": ">=6.7.0"
   },
   "ember-addon": {
     "app-js": {
-      "./components/schema-probe.js": "./dist/_app_/components/schema-probe.js",
-      "./services/schema-display-info.js": "./dist/_app_/services/schema-display-info.js",
-      "./services/schema-display-info/base.js": "./dist/_app_/services/schema-display-info/base.js"
+      "./components/surface-panel.js": "./dist/_app_/components/surface-panel.js"
     }
   }
 }

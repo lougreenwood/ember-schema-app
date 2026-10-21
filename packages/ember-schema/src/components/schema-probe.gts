@@ -1,9 +1,7 @@
-import type { DisplayInfo } from '@ember-schema/schema';
-
 import Component from '@glimmer/component';
 import { service } from '@ember/service';
 
-import type { AbstractSchemaDisplayInfoService } from '../services/schema-display-info/base';
+import type { AbstractSchemaDisplayInfoService, DisplayInfo } from '../services/schema-display-info/base';
 
 export interface SchemaProbeSignature {
   Args: {

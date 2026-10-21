@@ -1,4 +1,4 @@
-import DefaultSchemaDisplayInfoService from '@ember-schema/ember/services/schema-display-info';
+import DefaultSchemaDisplayInfoService from '@ember-schema/ember-schema/services/schema-display-info';
 import { module, test } from 'qunit';
 import { setupTest } from 'ember-qunit';
 
