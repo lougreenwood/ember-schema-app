@@ -244,7 +244,11 @@ importers:
         specifier: ^9.4.0
         version: 9.4.0
 
-  packages/schema: {}
+  packages/schema:
+    dependencies:
+      true-myth:
+        specifier: ^9.4.0
+        version: 9.4.0
 
   packages/ui:
     dependencies:

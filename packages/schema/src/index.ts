@@ -1,17 +1,63 @@
-export type FieldDescriptorKind = 'attribute' | 'belongs-to' | 'derived' | 'field' | 'has-many' | 'schema-object';
-
-export interface ResolvedFieldDisplayInfo {
-  readonly kind: FieldDescriptorKind;
-  readonly label: string;
-  readonly type?: string;
-}
-
-export interface DisplayInfo {
-  readonly fields: Readonly<Record<string, ResolvedFieldDisplayInfo>>;
-  readonly pluralLabel: string;
-  readonly resourceLabel: string;
-}
-
-export const schemaPackageIdentity = {
-  name: '@ember-schema/schema',
-} as const;
+export { resolveDisplayInfo, humanize, pluralize, flattenFieldNames } from './display-info.js';
+export { buildFieldDescriptor, buildFieldDescriptors, inferDisplayFieldType } from './field-descriptor.js';
+export type {
+  DisplayFieldType,
+  DisplayTypeInferenceArgs,
+  DisplayTypePredicate,
+  FieldDescriptor,
+  FieldDisplaySpecification,
+  FieldValueSource,
+} from './field-descriptor.js';
+export type {
+  BooleanFieldVariant,
+  CommonConditionalEffect,
+  CurrencySymbolPosition,
+  FieldAppearance,
+  FieldLayout,
+  FieldSelectOptionBase,
+  FieldSize,
+  FieldValueType,
+  FormSchemaBooleanField,
+  FormSchemaConditional,
+  FormSchemaConditionalEffect,
+  FormSchemaCurrencyField,
+  FormSchemaDateField,
+  FormSchemaDescriptor,
+  FormSchemaField,
+  FormSchemaFieldType,
+  FormSchemaGroup,
+  FormSchemaMultiInputField,
+  FormSchemaMultiSelectField,
+  FormSchemaNumberField,
+  FormSchemaSelectField,
+  FormSchemaTextField,
+  FormSchemaWhenCondition,
+  InvalidSelectionPolicy,
+  NumberDisplayType,
+  NumberInputControlType,
+  NumericConditionalEffect,
+  SelectConditionalEffect,
+  TextConditionalEffect,
+} from './form.js';
+export type {
+  ActionLeaf,
+  InteractionSurfaceActionTree,
+  InteractionSurfaceGroup,
+  InteractionSurfaceLinkTree,
+  InteractionSurfaceSubmenu,
+  LinkLeaf,
+} from './interaction.js';
+export type { ActionsRegistry, FieldRendererRegistry, RecordLookup, TableRegistry } from './registry.js';
+export { schemaError } from './types.js';
+export type {
+  AppErrorLike,
+  DisplayInfo,
+  FieldDescriptorKind,
+  FieldDisplayOverride,
+  ResolvedFieldDisplayInfo,
+  SchemaRegistry,
+  SchemaRegistryEntry,
+  SchemaResult,
+  SchemaSource,
+  SourceField,
+} from './types.js';

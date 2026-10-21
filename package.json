@@ -10,7 +10,7 @@
     "format": "prettier . --write",
     "format:check": "prettier . --check",
     "lint": "eslint .",
-    "test": "pnpm --filter demo test",
+    "test": "pnpm --filter @ember-schema/schema test && pnpm --filter demo test",
     "typecheck": "pnpm --filter @ember-schema/schema typecheck && pnpm --filter @ember-schema/ui typecheck && pnpm --filter @ember-schema/ember typecheck && pnpm --filter demo typecheck"
   },
   "devDependencies": {
