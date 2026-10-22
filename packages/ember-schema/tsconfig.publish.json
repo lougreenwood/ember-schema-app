@@ -7,6 +7,9 @@
     "emitDeclarationOnly": true,
     "noEmitOnError": true,
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "paths": {
+      "@ember-schema-app/ember-schema/*": ["./src/*"]
+    },
     "rootDir": "./src",
     "types": ["ember-source/types", "@glint/ember-tsc/types"]
   }
