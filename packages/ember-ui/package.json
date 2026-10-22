@@ -39,8 +39,7 @@
   },
   "ember-addon": {
     "app-js": {
-      "./components/pill.js": "./dist/_app_/components/pill.js",
-      "./components/surface-panel.js": "./dist/_app_/components/surface-panel.js"
+      "./components/pill.js": "./dist/_app_/components/pill.js"
     }
   }
 }

@@ -26,7 +26,7 @@ The repetition is not the only cost. The real cost is drift: a field is renamed 
 The schema is the source of truth for the resource’s presentation metadata. The packages interpret that metadata; the application owns the resource and its domain-specific rendering.
 
 - **Schema contracts** describe resources, fields, display metadata, and taxonomy without depending on Ember.
-- **Schema-free primitives** provide the buttons, overlays, fields, tables, and interaction behavior.
+- **Schema-free primitives** provide reusable presentation components. The copied set currently contains `Pill`; the remaining primitives are being filled in.
 - **Schema-aware components** compose those primitives from the schema: field display, forms, tables, and navigation.
 - **Consumer registries** let the application supply domain renderers, concrete tables, actions, and labels. The packages provide the mechanism; the application provides the policy.
 
@@ -92,6 +92,8 @@ mise run format:check
 mise run test
 ```
 
+The package-level checks are the current green path. The root commands include the demo, which is deliberately mid-migration; `mise run dev`, build, typecheck and test are expected to fail until the final consumer phase.
+
 All dependency and build commands run inside the repository container. Do not install dependencies on the host.
 
 ## Learn more
@@ -102,7 +104,7 @@ All dependency and build commands run inside the repository container. Do not in
 
 ## Status
 
-The packages are under active development and are not yet published. The repository currently proves the package boundaries and service seams; the schema-aware surfaces are being filled in.
+The packages are under active development and are not yet published. The schema package owns the copied metadata contract, and `@ember-schema-app/ember-schema` now contains the real display-info resolver with consumer-supplied registry, labels, taxonomy and route metadata. The display, form, table and demo surfaces are still being copied and are not yet demonstrated.
 
 ## License
 

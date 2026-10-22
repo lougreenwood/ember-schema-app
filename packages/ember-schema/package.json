@@ -33,18 +33,19 @@
     "@ember-schema-app/schema": "workspace:*",
     "@ember-schema-app/ember-ui": "workspace:*",
     "@embroider/addon-shim": "^1.10.3",
-    "decorator-transforms": "^2.3.1"
+    "decorator-transforms": "^2.3.1",
+    "ember-inflector": "^6.0.0",
+    "lodash-es": "4.17.21"
+  },
+  "devDependencies": {
+    "@types/lodash-es": "^4.17.12"
   },
   "peerDependencies": {
     "@glimmer/component": "^2.0.0",
+    "@warp-drive/core": "5.8.2",
+    "@warp-drive/legacy": "5.8.2",
     "ember-source": ">=6.7.0",
     "true-myth": "^9.4.0"
   },
-  "ember-addon": {
-    "app-js": {
-      "./components/schema-probe.js": "./dist/_app_/components/schema-probe.js",
-      "./services/schema-display-info.js": "./dist/_app_/services/schema-display-info.js",
-      "./services/schema-display-info/base.js": "./dist/_app_/services/schema-display-info/base.js"
-    }
-  }
+  "ember-addon": {}
 }

@@ -20,7 +20,7 @@ export default {
 
     addon.publicEntrypoints(['**/*.js', 'index.js']),
 
-    addon.appReexports(['components/**/*.js', 'services/**/*.js', 'helpers/**/*.js', 'modifiers/**/*.js']),
+    addon.appReexports(['components/**/*.js', 'helpers/**/*.js', 'modifiers/**/*.js']),
 
     addon.dependencies(),
 

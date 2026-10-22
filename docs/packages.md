@@ -4,19 +4,21 @@ The workspace is one repository with three packages and a synthetic demo. The pa
 
 ## `@ember-schema-app/schema`
 
-The schema package. It owns resource-schema contracts and display metadata types. It does not own field display, form, table, navigation, interaction-surface, or renderer-registry contracts; those belong to `@ember-schema-app/ember-schema`. It does not import Ember, Glimmer, a store, a router, or concrete application models.
+The schema package. It owns resource-schema contracts and display metadata types. It does not own field-display rendering, form, table, navigation, interaction-surface, or renderer-registry behavior; those belong to `@ember-schema-app/ember-schema`. It does not import Ember, Glimmer, a store, a router, or concrete application models.
 
 ## `@ember-schema-app/ember-ui`
 
-Schema-free Ember presentation primitives. It owns buttons, layout, overlays, form controls, trees, lists, pagination, and interaction/accessibility behavior. It does not depend on the schema or ember packages, resource registries, a store, a router, or a private application stylesheet.
+Schema-free Ember presentation primitives. It currently contains the copied `Pill`; the remaining primitives are still to be copied. It does not depend on the schema or ember packages, resource registries, a store, a router, or a private application stylesheet.
 
 ## `@ember-schema-app/ember-schema`
 
-Schema-aware Ember components and service contracts. It composes `@ember-schema-app/ember-ui` with `@ember-schema-app/schema` for field display, forms, tables, navigation, and their UI contracts. Concrete schemas, labels, taxonomy, routable resources, field renderers, tables, actions, and the application store remain consumer-supplied.
+Schema-aware Ember components and service contracts. It will compose `@ember-schema-app/ember-ui` with `@ember-schema-app/schema` for field display, forms, tables, navigation, and their UI contracts; those surfaces are still being copied. Its display-info service retains the resource, field, record-label and taxonomy resolution behavior; the consuming application supplies its schema registry, labels, taxonomy, already-resolved routable entries and WarpDrive store.
+
+The copied service is an abstract class generic over the consumer's resource-type-to-model map and icon type. A consuming application extends it, implements `schemaRegistry`, `resourceTypeLabels`, `schemaTaxonomy` and `routableSchemas`, and registers the subclass as `service:schema-display-info`. Supply that data and register the store schemas before the first lookup because resolved metadata is cached. Concrete schemas, field renderers, tables and actions remain consumer-supplied. The display/form/table surfaces are still being copied. The demo consumer is not yet migrated, so no consumer subclass compiles in this repository yet.
 
 ## Demo
 
-`apps/demo` is a synthetic Ember application. It uses an `author`, `post`, and `comment`-style fixture set in later phases and proves package-name consumption. It is not published and must not become a dependency of any package.
+`apps/demo` is a synthetic Ember application. It is intended to use an `author`, `post`, and `comment`-style fixture set and prove package-name consumption in the final phase. It is mid-migration now and is not published or a dependency of any package.
 
 ## Dependency direction
 
