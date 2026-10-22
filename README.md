@@ -99,6 +99,7 @@ All dependency and build commands run inside the repository container. Do not in
 ## Learn more
 
 - [Package responsibilities](docs/packages.md)
+- [Roadmap](ROADMAP.md)
 - [Style contract](docs/style-contract.md)
 - [Documentation rules](docs/README.md)
 

@@ -16,6 +16,8 @@ Schema-aware Ember components and service contracts. It will compose `@ember-sch
 
 The copied service is an abstract class generic over the consumer's resource-type-to-model map and icon type. A consuming application extends it, implements `schemaRegistry`, `resourceTypeLabels`, `schemaTaxonomy` and `routableSchemas`, and registers the subclass as `service:schema-display-info`. Supply that data and register the store schemas before the first lookup because resolved metadata is cached. Concrete schemas, field renderers, tables and actions remain consumer-supplied. The display/form/table surfaces are still being copied. The demo consumer is not yet migrated, so no consumer subclass compiles in this repository yet.
 
+Relationship display targets are schema-derived keys of that same resource map. The type-system roadmap covers propagating the map through field sets, display components, renderers and form/table descriptors; the current descriptor boundary already uses the map rather than widening targets to `string`.
+
 ## Demo
 
 `apps/demo` is a synthetic Ember application. It is intended to use an `author`, `post`, and `comment`-style fixture set and prove package-name consumption in the final phase. It is mid-migration now and is not published or a dependency of any package.
