@@ -32,6 +32,20 @@ The schema is the source of truth for the resource’s presentation metadata. Th
 
 This is not a page builder, a form generator bolted onto a component library, or a replacement for Ember’s component model. It is a typed interpretation layer between resource metadata and ordinary Ember components.
 
+## Design goals
+
+**Build interfaces from recursively composable parts.** A component should work independently and inside a larger composition without becoming a reduced embedded version. Forms can contain reusable subforms; sections and panels compose field sets and further sections; menu trees compose groups and submenus. This is a framework-wide goal, not an isolated feature.
+
+**Let schemas describe structure.** Schemas express fields, groups, relationships and hierarchy. Components interpret that structure consistently, reducing repeated markup and application-specific branching. Schema-driven composition and direct component composition should support the same underlying capabilities.
+
+**Preserve ownership through composition.** A parent coordinates its children without erasing their identity or behavior. A reusable subform should participate in its parent’s validation, submission and dirty/discard handling while retaining its own form contract. That goal does not prescribe a particular state-storage implementation.
+
+**Reuse interpretation across surfaces.** Resource metadata should give fields consistent labels, formatting and relationship meaning across detail views, tables, forms and navigation. Each surface retains its appropriate schema and interaction model; composition does not require one universal schema or component tree.
+
+**Keep application policy outside reusable mechanisms.** Applications supply resources, routing, actions, persistence and domain-specific presentation. The framework supplies reusable, typed interpretation and composition.
+
+These are design goals, not a claim that every composition is implemented today. The [roadmap](ROADMAP.md) tracks current coverage and future work, including compositional subforms.
+
 ## Why the separation matters
 
 Most schema-driven UI libraries blur three concerns: data, presentation, and application policy. That works until a consumer needs a different renderer, a different table, or a different field type.
@@ -92,7 +106,7 @@ mise run format:check
 mise run test
 ```
 
-The package-level checks are the current green path. The root commands include the demo, which is deliberately mid-migration; `mise run dev`, build, typecheck and test are expected to fail until the final consumer phase.
+The copied support package's build and typecheck passed at the current baseline; lint has known residuals. The root commands include the demo, which is deliberately mid-migration; `mise run dev`, build, typecheck and test are expected to fail until the final consumer phase. See the roadmap for separate copy, static-check and runtime milestones.
 
 All dependency and build commands run inside the repository container. Do not install dependencies on the host.
 
@@ -105,7 +119,7 @@ All dependency and build commands run inside the repository container. Do not in
 
 ## Status
 
-The packages are under active development and are not yet published. The schema package owns the copied metadata contract, and `@ember-schema-app/ember-schema` now contains the real display-info resolver with consumer-supplied registry, labels, taxonomy and route metadata. The display, form, table and demo surfaces are still being copied and are not yet demonstrated.
+The packages are under active development and are not yet published. The schema package owns the copied metadata contract. `@ember-schema-app/ember-schema` contains the real consumer-configured display-info resolver, Section/FieldSet, generic field display and UI support. Forms, tables and full menu/interaction surfaces remain to be assembled. The unfinished demo does not yet prove runtime behavior. The [roadmap](ROADMAP.md) covers extraction and the broader product direction; implementation is paused for its review.
 
 ## License
 

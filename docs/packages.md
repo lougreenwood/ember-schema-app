@@ -8,13 +8,13 @@ The schema package. It owns resource-schema contracts and display metadata types
 
 ## `@ember-schema-app/ember-ui`
 
-Schema-free Ember presentation primitives. It currently contains the copied `Pill`; the remaining primitives are still to be copied. It does not depend on the schema or ember packages, resource registries, a store, a router, or a private application stylesheet.
+Schema-free Ember presentation primitives. It currently contains `Pill`; copied primitives still coupled to the schema UI remain in `ember-schema` until their independence is proven. It does not depend on the schema or ember packages, resource registries, a store, a router, or a private application stylesheet.
 
 ## `@ember-schema-app/ember-schema`
 
-Schema-aware Ember components and service contracts. It will compose `@ember-schema-app/ember-ui` with `@ember-schema-app/schema` for field display, forms, tables, navigation, and their UI contracts; those surfaces are still being copied. Its display-info service retains the resource, field, record-label and taxonomy resolution behavior; the consuming application supplies its schema registry, labels, taxonomy, already-resolved routable entries and WarpDrive store.
+Schema-aware Ember components and service contracts. It currently owns Section/FieldSet/Field, generic field display and required UI/error/logger support, alongside the real display-info service. Forms, tables, navigation and interaction surfaces remain to be assembled. The consuming application supplies its schema registry, labels, taxonomy, already-resolved routable entries and WarpDrive store. Runtime behavior remains unproven until the final demo phase.
 
-The copied service is an abstract class generic over the consumer's resource-type-to-model map and icon type. A consuming application extends it, implements `schemaRegistry`, `resourceTypeLabels`, `schemaTaxonomy` and `routableSchemas`, and registers the subclass as `service:schema-display-info`. Supply that data and register the store schemas before the first lookup because resolved metadata is cached. Concrete schemas, field renderers, tables and actions remain consumer-supplied. The display/form/table surfaces are still being copied. The demo consumer is not yet migrated, so no consumer subclass compiles in this repository yet.
+The copied service is an abstract class generic over the consumer's resource-type-to-model map and icon type. A consuming application extends it, implements `schemaRegistry`, `resourceTypeLabels`, `schemaTaxonomy` and `routableSchemas`, and registers the subclass as `service:schema-display-info`. Supply that data and register the store schemas before the first lookup because resolved metadata is cached. Concrete schemas, domain field renderers, tables and actions remain consumer-supplied. The demo consumer is not yet migrated, so no consumer subclass is proven through the running demo yet.
 
 Relationship display targets are schema-derived keys of that same resource map. The type-system roadmap covers propagating the map through field sets, display components, renderers and form/table descriptors; the current descriptor boundary already uses the map rather than widening targets to `string`.
 
